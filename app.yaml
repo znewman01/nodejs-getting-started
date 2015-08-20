@@ -36,3 +36,14 @@ beta_settings:
 env_variables:
   OAUTH2_CALLBACK: http://your-project-id.appspot.com/oauth2callback
   NODE_ENV: production
+
+# Temporary workaround for a Cloud SDK bug.
+# Ensures that node_modules directory is not uploaded (the other entries are the
+# default values for skip_files).
+skip_files:
+ - ^(.*/)?#.*#$
+ - ^(.*/)?.*~$
+ - ^(.*/)?.*\.py[co]$
+ - ^(.*/)?.*/RCS/.*$
+ - ^(.*/)?\..*$
+ - ^(.*/)?.*/node_modules/.*$
